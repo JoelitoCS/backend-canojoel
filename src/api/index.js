@@ -7,7 +7,7 @@ const app = express();
 const FRONTEND_URL = process.env.FRONTEND_URL || '*';
 
 const allowedOrigins = [
-  'https://canojoelproyectoreact.vercel.app/',
+  'https://canojoelproyectoreact.vercel.app',
   'http://localhost:5173'
   
 ];
