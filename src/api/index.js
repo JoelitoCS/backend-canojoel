@@ -7,8 +7,9 @@ const app = express();
 const FRONTEND_URL = process.env.FRONTEND_URL || '*';
 
 const allowedOrigins = [
-  'http://localhost:5173',
-  'https://canojoelproyectoreact.vercel.app/'
+  'https://canojoelproyectoreact.vercel.app/',
+  'http://localhost:5173'
+  
 ];
 
 app.use(cors({
