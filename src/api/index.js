@@ -6,11 +6,22 @@ import alumnosRoutes from '../routes/alumnos.routes.js';
 const app = express();
 const FRONTEND_URL = process.env.FRONTEND_URL || '*';
 
-// Middleware
+const allowedOrigins = [
+  'http://localhost:5173',
+  'https://canojoelproyectoreact.vercel.app/'
+];
+
 app.use(cors({
-  origin: FRONTEND_URL,
+  origin: (origin, callback) => {
+    if (!origin || allowedOrigins.includes(origin)) {
+      callback(null, true);
+    } else {
+      callback(new Error('Origen no permitido por CORS'));
+    }
+  },
   credentials: true,
 }));
+
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
