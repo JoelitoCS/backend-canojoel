@@ -50,8 +50,7 @@ const startServer = async () => {
   try {
     await connectDB();
   } catch (error) {
-    console.error('❌ Error al iniciar el servidor:', error);
-    process.exit(1);
+    console.error('❌ Error al iniciar el servidor:', error.message);
   }
 };
 
