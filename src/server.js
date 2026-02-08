@@ -49,9 +49,6 @@ app.use((err, req, res, next) => {
 const startServer = async () => {
   try {
     await connectDB();
-    app.listen(PORT, () => {
-      console.log(`🚀 Servidor corriendo en http://localhost:${PORT}`);
-    });
   } catch (error) {
     console.error('❌ Error al iniciar el servidor:', error);
     process.exit(1);
@@ -59,4 +56,7 @@ const startServer = async () => {
 };
 
 startServer();
+
+export default app;
+
 
